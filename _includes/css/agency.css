@@ -19,12 +19,17 @@ body {
 }
 
 p {
-    font-size: 14px;
+    font-size: 20px;
     line-height: 1.75;
+    text-align: justify;
 }
 
 p.large {
     font-size: 16px;
+}
+
+p a {
+    text-decoration: underline;
 }
 
 a,
@@ -210,7 +215,7 @@ fieldset[disabled] .btn-xl.active {
     font-family: {{ site.data.template.font.primary }};
     font-weight: 400;
     letter-spacing: 1px;
-    color: #fff;
+    color: #{{ site.data.template.color.primary }};
     -webkit-transition: all ease .35s;
     -moz-transition: all ease .35s;
     transition: all ease .35s;
@@ -219,7 +224,8 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:hover,
 .navbar-default .nav li a:focus {
     outline: 0;
-    color: #{{ site.data.template.color.primary }};
+    color: #fff;
+    background-color: #{{ site.data.template.color.primary }};
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -228,10 +234,82 @@ fieldset[disabled] .btn-xl.active {
     background-color: #{{ site.data.template.color.primary }};
 }
 
+.dropdown-menu>.active>a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #{{ site.data.template.color.primary }};
+}
+
+.dropdown-menu li a {
+    display: block;
+    text-transform: uppercase;
+    font-family: {{ site.data.template.font.primary }};
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #{{ site.data.template.color.primary }};
+}
+
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
     background-color: #{{ site.data.template.color.secondary }};
+}
+
+.navbar-default.navbar-shrink  .navbar-brand:hover,
+.navbar-default.navbar-shrink  .navbar-brand:focus {
+    color: #{{ site.data.template.color.secondary }};
+}
+
+.navbar-default.navbar-shrink  .nav li a:hover,
+.navbar-default.navbar-shrink  .nav li a:focus {
+    background-color: #{{ site.data.template.color.secondary }} !important;
+}
+
+.navbar-default.navbar-shrink .navbar-brand {
+    color: #fff;
+}
+
+.navbar-default.navbar-shrink .nav li a {
+    color: #fff;
+}
+
+.navbar-default.navbar-shrink .dropdown-menu {
+    background-color: #222;
+}
+
+@media(max-width:767px) {
+
+    .navbar-default.navbar-shrink .dropdown-menu>.active>a {
+        border-radius: 0;
+        background-color: #{{ site.data.template.color.primary }} !important;
+    }
+
+    .navbar-default.navbar-shrink .dropdown-menu li a {
+        color: #fff !important;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        text-transform: uppercase;
+        font-family: {{ site.data.template.font.primary }};
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #{{ site.data.template.color.primary }} !important;
+    }
+
+    .dropdown-menu li a:hover {
+        border-radius: 0;
+        color: #fff !important;
+        background-color: #{{ site.data.template.color.primary }} !important;
+    }
+    
+    .navbar-default {
+        background-color: #fff;
+    }
+
+    .navbar-default.navbar-shrink {
+        background-color: #222;
+    }
 }
 
 @media(min-width:768px) {
@@ -256,20 +334,22 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default.navbar-shrink {
-        padding: 10px 0;
+        padding: 3px 0;
         background-color: #222;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
         font-size: 1.5em;
     }
+
+
 }
 
 header {
     text-align: center;
-    color: #fff;
+    /* color: #fff; */
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
+    /* background-image: url('{{ site.baseurl }}/img/header-bg.jpg'); */
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -366,6 +446,19 @@ section h3.section-subheading {
     max-width: 400px;
 }
 
+#portfolio .portfolio-video {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+#portfolio iframe {
+    margin: 0 auto;
+    width: 100%;
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
     position: absolute;
     width: 100%;
@@ -420,6 +513,11 @@ section h3.section-subheading {
     font-family: {{ site.data.template.font.secondary }};
     font-size: 16px;
     font-style: italic;
+}
+
+#portfolio .row-title {
+    margin-top: 70px;
+    margin-bottom: 30px;
 }
 
 #portfolio * {
